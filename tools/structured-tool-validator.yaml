@@ -1,0 +1,19 @@
+name: "structured-tool-validator"
+description: "Validates tool definitions as structured JSON schemas with typed argument models."
+input_schema:
+  type: object
+  properties:
+    tool_definition:
+      type: object
+      description: "Tool definition schema object containing name, description, and input_schema."
+    target_standard:
+      type: string
+      enum:
+        - "opengap"
+        - "openai"
+        - "anthropic"
+        - "json_schema"
+      description: "Target tool schema specification standard."
+      default: "opengap"
+  required:
+    - tool_definition

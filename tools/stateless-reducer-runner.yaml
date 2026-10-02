@@ -1,0 +1,18 @@
+name: "stateless-reducer-runner"
+description: "Executes deterministic reducer steps mapping (State, Event) to (NextState, OutgoingActions)."
+input_schema:
+  type: object
+  properties:
+    current_state:
+      type: object
+      description: "Current unified business and execution state object."
+    incoming_event:
+      type: object
+      description: "Incoming event triggering state transition (user message, tool return, human input)."
+    reducer_name:
+      type: string
+      description: "Name of the target reducer function to invoke."
+      default: "default_agent_reducer"
+  required:
+    - current_state
+    - incoming_event

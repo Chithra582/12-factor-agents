@@ -1,0 +1,22 @@
+name: "context-budget-compactor"
+description: "Formats, compacts, and prunes error stack traces and historical turns into tight context windows."
+input_schema:
+  type: object
+  properties:
+    raw_content:
+      type: string
+      description: "Raw text, JSON payload, or stack trace requiring compaction."
+    max_tokens:
+      type: integer
+      description: "Target token budget ceiling for the compacted output."
+      default: 500
+    compaction_mode:
+      type: string
+      enum:
+        - "error_traceback"
+        - "tool_result"
+        - "conversation_history"
+      description: "Type of content being compacted."
+      default: "error_traceback"
+  required:
+    - raw_content

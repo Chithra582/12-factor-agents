@@ -1,0 +1,23 @@
+name: "factor-compliance-checker"
+description: "Evaluates agent architectures against the 12 factors and emits compliance scorecards."
+input_schema:
+  type: object
+  properties:
+    codebase_path:
+      type: string
+      description: "Path to the root directory of the agent codebase to audit."
+      default: "."
+    factors_to_evaluate:
+      type: array
+      items:
+        type: integer
+      description: "List of specific factor numbers (1-12) to evaluate, or all factors if empty."
+    output_format:
+      type: string
+      enum:
+        - "markdown"
+        - "json"
+      description: "Output format of the compliance scorecard."
+      default: "markdown"
+  required:
+    - codebase_path

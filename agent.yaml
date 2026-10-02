@@ -1,0 +1,22 @@
+spec_version: "0.1.0"
+name: "twelve-factor-agents"
+version: "1.0.0"
+description: "12-Factor Agents: Comprehensive principles and architectural runtime for building reliable, production-ready LLM applications."
+author: "Dex & Humanlayer Contributors"
+license: "Apache-2.0"
+metadata:
+  domain: "Developer Tools / Agent Architecture & Production Engineering Principles"
+  category: "Developer Tools"
+  framework: "12-Factor Agent Framework & Stateless Reducer Architecture"
+  language: "TypeScript, Python"
+skills:
+  - "twelve-factor-architecture-audit"
+  - "stateless-reducer-orchestration"
+  - "human-in-the-loop-tooling"
+  - "context-window-engineering"
+tools:
+  - "factor-compliance-checker"
+  - "stateless-reducer-runner"
+  - "human-approval-broker"
+  - "context-budget-compactor"
+  - "structured-tool-validator"

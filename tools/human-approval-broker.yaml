@@ -1,0 +1,24 @@
+name: "human-approval-broker"
+description: "Dispatches pause/resume interrupts and manages human authorization tool calls."
+input_schema:
+  type: object
+  properties:
+    action:
+      type: string
+      enum:
+        - "request_approval"
+        - "check_status"
+        - "resolve_approval"
+      description: "Human approval workflow operation."
+    action_description:
+      type: string
+      description: "Clear explanation of the sensitive action requiring human review."
+    timeout_seconds:
+      type: integer
+      description: "Maximum waiting duration before fallback escalation."
+      default: 3600
+    approval_id:
+      type: string
+      description: "Unique approval request identifier (required for check_status and resolve_approval)."
+  required:
+    - action
